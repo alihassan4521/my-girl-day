@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For You 🤍</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#faf9f6;
+    color:#30323a;
+    overflow-x:hidden;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* background */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:#e8f0ff;
+    top:-180px;
+    right:-150px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:#f1eaff;
+    bottom:-170px;
+    left:-140px;
+    z-index:-2;
+}
+
+
+/* pages */
+
+.page{
+    display:none;
+    min-height:100vh;
+    padding:30px 20px 90px;
+}
+
+.page.active{
+    display:flex;
+}
+
+.container{
+    width:min(850px,100%);
+    margin:auto;
+}
+
+
+/* top */
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#8b8c93;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+
+/* PAGE 1 */
+
+.page-one{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero{
+    position:relative;
+    padding:30px 10px;
+}
+
+.small-text{
+    font-size:12px;
+    color:#888b94;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(55px,10vw,100px);
+    line-height:.95;
+    font-weight:600;
+}
+
+.hero h1 span{
+    color:#7898e8;
+}
+
+.hero p{
+    max-width:500px;
+    margin:25px auto 0;
+    color:#777b84;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.start{
+    margin-top:30px;
+    border:none;
+    background:#30323a;
+    color:white;
+    padding:15px 25px;
+    border-radius:15px;
+    cursor:pointer;
+    font-weight:700;
+    transition:.25s;
+    box-shadow:0 12px 25px rgba(40,40,40,.13);
+}
+
+.start:hover{
+    transform:translateY(-4px);
+}
+
+.floating{
+    position:absolute;
+    font-size:20px;
+    opacity:.5;
+}
+
+.f1{
+    left:5%;
+    top:10%;
+}
+
+.f2{
+    right:7%;
+    top:25%;
+}
+
+.f3{
+    left:10%;
+    bottom:10%;
+}
+
+.f4{
+    right:8%;
+    bottom:5%;
+}
+
+
+/* PAGE 2 */
+
+.page-two{
+    align-items:center;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.heading span{
+    font-size:11px;
+    letter-spacing:2px;
+    color:#8b8d95;
+    text-transform:uppercase;
+}
+
+.heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(40px,6vw,65px);
+    margin-top:10px;
+}
+
+.heading p{
+    color:#7c7e86;
+    margin-top:10px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.card{
+    background:rgba(255,255,255,.88);
+    border:1px solid #e7e4de;
+    border-radius:22px;
+    padding:28px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 8px 25px rgba(40,40,40,.04);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(40,40,40,.08);
+}
+
+.card-icon{
+    width:55px;
+    height:55px;
+    margin:0 auto 18px;
+    border-radius:17px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    background:#edf3ff;
+}
+
+.card:nth-child(2) .card-icon{
+    background:#f3edff;
+}
+
+.card:nth-child(3) .card-icon{
+    background:#fff3dc;
+}
+
+.card h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#85868d;
+    font-size:12px;
+    line-height:1.6;
+}
+
+
+/* PAGE 3 */
+
+.page-three{
+    align-items:center;
+}
+
+.letter{
+    width:min(650px,100%);
+    margin:auto;
+    background:#fffefa;
+    border:1px solid #e7e3da;
+    border-radius:25px;
+    padding:45px;
+    box-shadow:0 20px 50px rgba(50,50,50,.06);
+    position:relative;
+}
+
+.letter::before{
+    content:"";
+    position:absolute;
+    width:55px;
+    height:3px;
+    background:#a8bce9;
+    top:28px;
+    left:45px;
+    border-radius:10px;
+}
+
+.letter h2{
+    font-family:"Playfair Display",serif;
+    font-size:40px;
+    margin-bottom:22px;
+}
+
+.letter p{
+    color:#6f727a;
+    font-size:14px;
+    line-height:2;
+}
+
+.signature{
+    margin-top:25px;
+    font-family:"Playfair Display",serif;
+    font-size:22px;
+    color:#7897e8;
+}
+
+
+/* PAGE 4 */
+
+.page-four{
+    align-items:center;
+    text-align:center;
+}
+
+.final{
+    width:min(700px,100%);
+    margin:auto;
+}
+
+.final-emoji{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.final h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,8vw,80px);
+    line-height:1;
+}
+
+.final h2 span{
+    color:#7897e8;
+}
+
+.final p{
+    max-width:560px;
+    margin:25px auto 0;
+    color:#73767e;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.last-button{
+    margin-top:30px;
+    border:none;
+    background:#30323a;
+    color:white;
+    padding:15px 25px;
+    border-radius:15px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+
+/* navigation */
+
+.nav{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(400px,calc(100% - 30px));
+    display:flex;
+    gap:8px;
+    padding:7px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border:1px solid #e5e2dc;
+    border-radius:17px;
+    box-shadow:0 12px 35px rgba(40,40,40,.09);
+    z-index:50;
+}
+
+.nav button{
+    flex:1;
+    border:none;
+    background:transparent;
+    padding:11px;
+    border-radius:11px;
+    cursor:pointer;
+    color:#777;
+    font-size:12px;
+    font-weight:700;
+}
+
+.nav button:hover{
+    background:#f4f3ef;
+}
+
+.nav .next{
+    background:#30323a;
+    color:white;
+}
+
+.nav .next:hover{
+    background:#202126;
+}
+
+.nav button:disabled{
+    opacity:.3;
+    cursor:not-allowed;
+}
+
+
+/* popup */
+
+.popup-bg{
+    position:fixed;
+    inset:0;
+    background:rgba(40,40,45,.22);
+    backdrop-filter:blur(7px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:100;
+}
+
+.popup-bg.show{
+    display:flex;
+}
+
+.popup{
+    width:min(400px,100%);
+    background:white;
+    border-radius:24px;
+    padding:32px;
+    text-align:center;
+    box-shadow:0 25px 70px rgba(0,0,0,.15);
+    animation:pop .3s ease;
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.popup-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.popup h3{
+    font-family:"Playfair Display",serif;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.popup p{
+    color:#777;
+    font-size:13px;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.close{
+    border:none;
+    background:#30323a;
+    color:white;
+    padding:11px 20px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+
+/* confetti */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    z-index:200;
+    pointer-events:none;
+    animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+
+/* mobile */
+
+@media(max-width:650px){
+
+    .page{
+        padding:22px 15px 90px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .card{
+        padding:22px 18px;
+        display:flex;
+        align-items:center;
+        text-align:left;
+        gap:16px;
+    }
+
+    .card-icon{
+        margin:0;
+        flex-shrink:0;
+    }
+
+    .letter{
+        padding:40px 25px 30px;
+    }
+
+    .letter::before{
+        left:25px;
+    }
+
+    .letter h2{
+        font-size:34px;
+    }
+
+    .letter p{
+        font-size:13px;
+        line-height:1.8;
+    }
+
+    .final-emoji{
+        font-size:58px;
+    }
+
+    .final p{
+        font-size:14px;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .heading h2{
+        font-size:38px;
+    }
+
+    .nav button{
+        font-size:11px;
+        padding:10px 6px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- PAGE 1 -->
+
+<section class="page page-one active" id="page1">
+
+    <div class="container">
+
+        <div class="top">
+            <span>A little surprise</span>
+            <span>01</span>
+        </div>
+
+
+        <div class="hero">
+
+            <div class="floating f1">✦</div>
+            <div class="floating f2">✧</div>
+            <div class="floating f3">✦</div>
+            <div class="floating f4">♡</div>
+
+            <div class="small-text">
+                made especially for you
+            </div>
+
+            <h1>
+                this is<br>
+                <span>for you.</span>
+            </h1>
+
+            <p>
+                Nothing too complicated.
+                Just a small corner of the internet
+                made to make your birthday a little more special.
+            </p>
+
+            <button class="start" onclick="goTo(2)">
+                open it 🤍
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PAGE 2 -->
+
+<section class="page page-two" id="page2">
+
+    <div class="container">
+
+        <div class="heading">
+
+            <span>just a few things</span>
+
+            <h2>Pick one.</h2>
+
+            <p>
+                There is no wrong choice.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card"
+                 onclick="showPopup(
+                    '🌷',
+                    'A Small Reminder',
+                    'Some days are ordinary. Some days become memories. I hope today becomes one of the good ones.'
+                 )">
+
+                <div class="card-icon">
+                    🌷
+                </div>
+
+                <div>
+                    <h3>A Small Reminder</h3>
+
+                    <p>
+                        Something worth reading.
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="card"
+                 onclick="showPopup(
+                    '✨',
+                    'A Tiny Wish',
+                    'I hope this new year of your life brings you more peaceful moments, genuine smiles and beautiful memories.'
+                 )">
+
+                <div class="card-icon">
+                    ✨
+                </div>
+
+                <div>
+                    <h3>A Tiny Wish</h3>
+
+                    <p>
+                        One little wish for you.
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="card"
+                 onclick="showPopup(
+                    '🎁',
+                    'One More Thing',
+                    'You were probably expecting something useful here. Unfortunately, you got a birthday website instead. 😂'
+                 )">
+
+                <div class="card-icon">
+                    🎁
+                </div>
+
+                <div>
+                    <h3>One More Thing</h3>
+
+                    <p>
+                        Okay, this one is random.
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PAGE 3 -->
+
+<section class="page page-three" id="page3">
+
+    <div class="container">
+
+        <div class="top">
+            <span>A little letter</span>
+            <span>03</span>
+        </div>
+
+
+        <div class="letter">
+
+            <h2>
+                Hey you,
+            </h2>
+
+            <p>
+                I could have just written a normal birthday message,
+                but somehow that felt a little too simple.
+
+                <br><br>
+
+                So I made this instead.
+
+                <br><br>
+
+                I hope you always have people around you
+                who make you laugh, moments that you remember
+                for a long time, and enough happiness to make
+                even the boring days feel a little better.
+
+                <br><br>
+
+                And most importantly, I hope this year gives you
+                plenty of reasons to smile without even trying.
+
+            </p>
+
+            <div class="signature">
+                made with a little extra effort 🤍
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PAGE 4 -->
+
+<section class="page page-four" id="page4">
+
+    <div class="container">
+
+        <div class="final">
+
+            <div class="final-emoji">
+                🎂
+            </div>
+
+            <div class="small-text">
+                okay, final page
+            </div>
+
+            <h2>
+                Happy<br>
+                <span>Birthday!</span>
+            </h2>
+
+            <p>
+                I hope your day is full of laughter,
+                good food, good people and moments
+                that you will want to remember.
+
+                <br><br>
+
+                Whatever this next chapter brings,
+                I hope it brings you many beautiful things.
+
+                <br><br>
+
+                Enjoy your day. You deserve a good one. 🤍
+            </p>
+
+            <button class="last-button"
+                    onclick="celebrate()">
+                celebrate 🎉
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- NAVIGATION -->
+
+<div class="nav">
+
+    <button id="backBtn"
+            onclick="previousPage()">
+        ← Back
+    </button>
+
+    <button class="next"
+            id="nextBtn"
+            onclick="nextPage()">
+        Next →
+    </button>
+
+</div>
+
+
+
+<!-- POPUP -->
+
+<div class="popup-bg"
+     id="popupBg"
+     onclick="closeOutside(event)">
+
+    <div class="popup">
+
+        <div class="popup-icon"
+             id="popupIcon">
+            ✨
+        </div>
+
+        <h3 id="popupTitle">
+            Surprise
+        </h3>
+
+        <p id="popupText">
+            Something nice.
+        </p>
+
+        <button class="close"
+                onclick="closePopup()">
+            okay 🤍
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+let currentPage = 1;
+
+const totalPages = 4;
+
+
+/* page navigation */
+
+function updatePage(){
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+
+    document.getElementById(
+        "page" + currentPage
+    ).classList.add("active");
+
+
+    document.getElementById("backBtn").disabled =
+        currentPage === 1;
+
+
+    document.getElementById("nextBtn").disabled =
+        currentPage === totalPages;
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function goTo(page){
+
+    if(page < 1 || page > totalPages){
+        return;
+    }
+
+    currentPage = page;
+
+    updatePage();
+
+}
+
+
+function nextPage(){
+
+    if(currentPage < totalPages){
+
+        currentPage++;
+
+        updatePage();
+
+    }
+
+}
+
+
+function previousPage(){
+
+    if(currentPage > 1){
+
+        currentPage--;
+
+        updatePage();
+
+    }
+
+}
+
+
+/* popup */
+
+function showPopup(icon,title,text){
+
+    document.getElementById("popupIcon").textContent =
+        icon;
+
+    document.getElementById("popupTitle").textContent =
+        title;
+
+    document.getElementById("popupText").textContent =
+        text;
+
+    document.getElementById("popupBg")
+        .classList.add("show");
+
+}
+
+
+function closePopup(){
+
+    document.getElementById("popupBg")
+        .classList.remove("show");
+
+}
+
+
+function closeOutside(event){
+
+    if(event.target.id === "popupBg"){
+        closePopup();
+    }
+
+}
+
+
+/* celebration */
+
+function celebrate(){
+
+    const emojis = [
+        "🎉",
+        "✨",
+        "🎂",
+        "🎁",
+        "🤍",
+        "⭐",
+        "🩵",
+        "🌷"
+    ];
+
+
+    for(let i = 0; i < 60; i++){
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.textContent =
+            emojis[
+                Math.floor(
+                    Math.random() * emojis.length
+                )
+            ];
+
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+
+        piece.style.fontSize =
+            (10 + Math.random() * 17) + "px";
+
+
+        piece.style.animationDelay =
+            Math.random() * 1.3 + "s";
+
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(() => {
+            piece.remove();
+        },5000);
+
+    }
+
+
+    setTimeout(() => {
+
+        showPopup(
+            "🎉",
+            "One last thing...",
+            "Happy Birthday! I hope today gives you a lot of reasons to smile and leaves you with some really good memories. 🤍"
+        );
+
+    },500);
+
+}
+
+
+/* keyboard */
+
+document.addEventListener("keydown",event => {
+
+    if(event.key === "ArrowRight"){
+        nextPage();
+    }
+
+    if(event.key === "ArrowLeft"){
+        previousPage();
+    }
+
+    if(event.key === "Escape"){
+        closePopup();
+    }
+
+});
+
+
+updatePage();
+
+</script>
+
+</body>
+</html>
